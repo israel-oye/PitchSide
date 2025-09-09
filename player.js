@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
     })
     .then((data) => {
       let countries = data;
-
+      console.log(countries);
+      countries.sort((a, b) => a.name.common.localeCompare(b.name.common));
       countries.map((country) => {
         let opt = document.createElement("option");
         opt.innerHTML = country["name"]["common"];
